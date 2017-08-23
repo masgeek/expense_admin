@@ -9,6 +9,7 @@ use Yii;
  *
  * @property string $name
  * @property int $pin
+ * @property int $id
  */
 class Login extends \yii\db\ActiveRecord
 {
@@ -39,6 +40,7 @@ class Login extends \yii\db\ActiveRecord
         return [
             'name' => 'Name',
             'pin' => 'Pin',
+            'id' => 'ID',
         ];
     }
 }
