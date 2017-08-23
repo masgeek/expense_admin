@@ -1,27 +1,31 @@
 <?php
 
-$params = require __DIR__ . '/params.php';
-$db = require __DIR__ . '/db.php';
+$params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
-        '@bower' => '@vendor/bower-asset',
+        '@bower' => 'vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+    ],
+    'modules' => [
+        'gridview' => [
+            'class' => 'kartik\grid\Module'
+        ]
     ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => '7ZV__lmHsT_ZKGywo_g6GnJSeXZ1OlAA',
+            'cookieValidationKey' => 'IAyw-vu_u-ruH_LfDNEFS-LEQR88cAdM',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'identityClass' => 'app\model_extended\USERS_MODEL',
+            'enableAutoLogin' => false,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -42,13 +46,44 @@ $config = [
                 ],
             ],
         ],
-        'db' => $db,
+        'db' => require(__DIR__ . '/db.php'),
 
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '<controller:\w+>/<id:\d+>' => '<controller>/view',
+                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                //custom rules
+                '/' => 'site/index',
+                'my-salons' => 'salon/index',
+                'my-staff' => 'staff/index',
+                'my-payments' => 'payment/index',
+				'pending-payments' => 'payment/pending-payments',
+				'confirm-payment' => 'payment/confirm-payment',
+				'finalized-payments' => 'payment/finalized-payments',
+                'my-bookings' => 'reservation/index',
+                'add-service' => 'salonservices/create',
+                'assign-service' => 'booked/assign-service',
+                'confirm-service' => 'booked/confirm-service',
+                'confirm-reservation' => 'reservation/confirm-reservation',
+                'process-reservation' => 'reservation/process-reservation',
+                'confirm' => 'reservation/confirm',
+                'services' => 'service/index',
+                'manage-users' => 'user/index',
+                'user-status' => 'user/user-status',
             ],
+        ],
+        //formatting class
+        'formatter' => [
+            'class' => 'yii\i18n\Formatter',
+            //'dateFormat' => 'dd.MM.yyyy',
+            'decimalSeparator' => '.',
+            'thousandSeparator' => ',',
+            //'timeZone' => 'GMT', //default time zones and format
+            'currencyCode' => 'KES',
+            'nullDisplay' => '0'
         ],
 
     ],
