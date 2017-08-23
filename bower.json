@@ -1,31 +1,24 @@
 {
-  "name": "spa_admin",
+  "name": "expensemanager",
   "authors": [
-    "Lillian Mwenda <lillianmwenda59@gmail.com>"
+    "Sammy Barasa <barsamms@gmail.com>"
   ],
-  "description": "SPA Admin management portal",
+  "description": "Expense Tracker and managament",
   "main": "index.php",
   "keywords": [
-    "SPA",
-    "Android",
-    "Backend"
+    "expense",
+    "api",
+    "rest"
   ],
   "license": "MIT",
-  "homepage": "spa.tsobu.co.ke",
+  "homepage": "expense.tsobu.co.ke",
   "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
+    "vendor/bower",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "jquery-validation": "^1.16.0",
-    "jsgrid": "js-grid#^1.5.3",
-    "pace": "pace#^1.0.2",
-    "jquery.dialog": "^0.2.0",
-    "jquery-ui": "^1.12.1"
-  }
+  ]
 }
