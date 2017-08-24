@@ -60,7 +60,6 @@ $config = [
         //formatting class
         'formatter' => [
             'class' => 'yii\i18n\Formatter',
-            //'dateFormat' => 'dd.MM.yyyy',
             'decimalSeparator' => '.',
             'thousandSeparator' => ',',
             //'timeZone' => 'GMT', //default time zones and format
