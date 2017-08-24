@@ -63,4 +63,22 @@ class ExpenseController extends ActiveController
         }
         return $message;
     }
+
+    public function actionCategory()
+    {
+        $query = EXPENSE_MODEL::find();
+
+        // The problem is in the below sum
+        // $query->joinWith('inventory');
+        $query->select(['type', 'amount']);
+        $query->groupBy('type');
+        $query->sum('amount');
+        $query->all();
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        return $dataProvider;
+    }
 }
