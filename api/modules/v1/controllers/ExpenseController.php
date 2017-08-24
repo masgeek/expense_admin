@@ -110,7 +110,7 @@ class ExpenseController extends ActiveController
 		foreach ($expenses as $key => $value) {
 			$points[] = [
 				'point' => $i,
-				'amount' => (int)$value->amount
+				'value' => (int)$value->amount
 			];
 
 			$i++;
