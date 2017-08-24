@@ -66,6 +66,7 @@ $config = [
                     'extraPatterns' => [
                         'GET,POST all' => 'all',
                         'GET,POST category' => 'category',
+                        'GET,POST graph' => 'graph',
                         'POST login' => 'login',
                         'POST register' => 'register',
                         'POST add' => 'add',

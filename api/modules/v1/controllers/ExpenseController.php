@@ -100,4 +100,22 @@ class ExpenseController extends ActiveController
 		return $msg;
 	}
 
+	public function actionGraph()
+	{
+		$points = [];
+		$expenses = EXPENSE_MODEL::find()
+			->orderBy(['date' => SORT_ASC])
+			->all();
+		$i = 0;
+		foreach ($expenses as $key => $value) {
+			$points[] = [
+				'point' => $i,
+				'amount' => $value->amount
+			];
+
+			$i++;
+		}
+		return $points;
+	}
+
 }
