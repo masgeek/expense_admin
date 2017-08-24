@@ -91,9 +91,11 @@ class ExpenseController extends ActiveController
 		$difference = ((float)$income) - ((float)$expenses);
 
 		$msg = [
-			'total_income'=>$income,
-			'total_expenses'=>$expenses,
-			'difference'=>(string)$difference,
+			[
+				'total_income' => $income,
+				'total_expenses' => $expenses,
+				'difference' => (string)$difference,
+			]
 		];
 		return $msg;
 	}
