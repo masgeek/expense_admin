@@ -1,3 +1,4 @@
 *
 !.gitignore
 !AppAsset.php
+!ThemeAsset.php
