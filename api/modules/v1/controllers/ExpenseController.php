@@ -81,4 +81,9 @@ class ExpenseController extends ActiveController
 
         return $dataProvider;
     }
+
+    public function actionAll()
+    {
+
+    }
 }
