@@ -31,6 +31,7 @@ class Income extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['type', 'amount'], 'required'],
             [['type', 'place', 'note', 'date'], 'string'],
             [['amount', 'cheque'], 'integer'],
         ];

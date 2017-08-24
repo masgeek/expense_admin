@@ -31,6 +31,7 @@ class Expense extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['type', 'amount', 'date'], 'required'],
             [['type', 'place', 'note', 'date'], 'string'],
             [['amount', 'cheque'], 'integer'],
         ];
