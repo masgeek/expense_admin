@@ -44,7 +44,7 @@ class UserController extends ActiveController
         }
         $request = (object)Yii::$app->request->post();
 
-        $name = isset($request->name) ? $request->pin : null;
+        $name = isset($request->name) ? $request->name : null;
         $pin = isset($request->pin) ? $request->pin : null;
 
         $user = LOGIN_MODEL::findOne(['name' => $name, 'pin' => $pin]);
@@ -74,7 +74,7 @@ class UserController extends ActiveController
         $user = new LOGIN_MODEL();
         //$user->setScenario(USER_MODEL::SCENARIO_CREATE);
         //assign the post data values
-        $user->name = isset($request->name) ? $request->pin : null;
+        $user->name = isset($request->name) ? $request->name : null;
         $user->pin = isset($request->pin) ? $request->pin : null;
 
         if ($user->validate()) {
