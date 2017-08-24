@@ -45,7 +45,7 @@ class UserController extends ActiveController
         $request = (object)Yii::$app->request->post();
 
         $name = $request->name;
-        $pin = $request->pin;
+        $pin = (int)$request->pin;
         $user = LOGIN_MODEL::findOne(['name' => $name, 'pin' => $pin]);
         if ($user != null) {
             $message = $user;
