@@ -6,23 +6,20 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Expense  Models';
+$this->title = 'Expense Report';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="expense--model-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Expense  Model', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
+            // 'id',
             'type:ntext',
             'amount:currency',
             'place:ntext',
