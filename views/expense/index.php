@@ -27,8 +27,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'amount',
             'place:ntext',
             'note:ntext',
-            'cheque',
-            'date:ntext',
+            // 'cheque',
+            // 'date',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

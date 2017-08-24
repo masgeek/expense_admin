@@ -32,8 +32,9 @@ class Expense extends \yii\db\ActiveRecord
     {
         return [
             [['type', 'amount', 'date'], 'required'],
-            [['type', 'place', 'note', 'date'], 'string'],
+            [['type', 'place', 'note'], 'string'],
             [['amount', 'cheque'], 'integer'],
+            [['date'], 'safe'],
         ];
     }
 
