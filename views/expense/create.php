@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models_extended\EXPENSE_MODEL */
 
-$this->title = 'Create Expense  Model';
+$this->title = 'Create Expense';
 $this->params['breadcrumbs'][] = ['label' => 'Expense  Models', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

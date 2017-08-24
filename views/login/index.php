@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
+$this->title = 'Login  Models';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="login--model-index">
@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'name:ntext',
             'pin',
-            //'id',
+            'id',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
